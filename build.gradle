@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = "2.0.6.RELEASE"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+
+plugins {
+    id "java"
+}
+
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+}
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': '1.0.0'
+        attributes 'Main-Class': 'io.pivotal.pal.tracker.PalTrackerApplication'
+    }
+
+    version '1.0.0'
+}
