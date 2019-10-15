@@ -4,6 +4,8 @@ applications:
     buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.16
     memory: 1G
     path: ./build/libs/pal-tracker.jar
+    routes:
+      - route: pal-tracker-fuka.apps.evans.pal.pivotal.io
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+}}'
-      WELCOME_MESSAGE: Hello from Cloud Foundry
+      WELCOME_MESSAGE: Hello from the review environment
