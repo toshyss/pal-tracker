@@ -62,9 +62,7 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
                 sql,
                 new BeanPropertyRowMapper<>(TimeEntry.class)
                 );
-        if (entries.isEmpty()) {
-            return null;
-        }
+
         return entries;
     }
 
